@@ -4,7 +4,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Cards from "@/components/Cards";
 import Footer from "@/components/Footer";
-import ExtraOne from "@/components/Extraone";
+import ExtraOne from "@/components/ExtraOne";
+import ExtraTwo from "@/components/ExtraTwo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         <Hero></Hero>
         <Cards></Cards>
         <ExtraOne></ExtraOne>
+        <ExtraTwo></ExtraTwo>
         {children}
         <Footer></Footer>
         
