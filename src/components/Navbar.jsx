@@ -30,8 +30,7 @@ const Navbar = () => {
             <li><a className='text-[#FFFFFFB3]'>Add Idea<span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span></a></li>
             <li className='text-[#FFFFFFB3] text-md font-semibold'><a>My Ideas<span  className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold' >Private</span></a></li>
             <li className='text-[#FFFFFFB3]'><a>My Interactions<span  className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span></a></li>
-           
-            
+
            
           </ul>
         </div>
