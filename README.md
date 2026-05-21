@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IdeaVault – Startup Idea Sharing Platform
 
-## Getting Started
+🔗 **Live Site URL:** [IdeaVault](https://ideavault.vercel.app)
 
-First, run the development server:
+## About IdeaVault
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+IdeaVault is a community-driven web platform where innovators, founders, and creators can share startup ideas, explore concepts posted by others, and engage through comments and discussions. The platform encourages creativity, collaboration, and real-world validation of ideas through collective intelligence.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🚀 **Submit & Showcase Ideas** – Share your startup concept with a structured form covering problem statement, proposed solution, target audience, estimated budget, and tags — making every idea clear and discoverable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🔥 **Trending Ideas Feed** – Explore the most popular and recently active ideas ranked by community engagement, powered by a smart trending algorithm based on comments and activity.
 
-## Learn More
+- 💬 **Interactive Comment System** – Engage with ideas through a full comment system where users can add, edit, and delete their own comments in real time, fostering meaningful feedback and discussion.
 
-To learn more about Next.js, take a look at the following resources:
+- 🔐 **Secure Authentication** – Supports email/password registration and Google OAuth login, protected with JWT-based authentication across all private routes including Add Idea, My Ideas, and My Interactions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🔍 **Search & Filter** – Instantly search ideas by title using case-insensitive keyword matching, and filter results by category or date range to find exactly what you're looking for.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🌗 **Dark / Light Theme Toggle** – Switch between dark and light modes from the navbar, with the preference saved locally so your theme persists across sessions.
 
-## Deploy on Vercel
+- 📋 **My Ideas & My Interactions Dashboard** – Logged-in users can manage their submitted ideas (update or delete via modal) and track all their interactions including commented ideas from a personal dashboard.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend:** React.js, Tailwind CSS, React Router
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Auth:** Firebase Auth (Google), JWT
+- **Hosting:** Vercel (client), Render (server)
