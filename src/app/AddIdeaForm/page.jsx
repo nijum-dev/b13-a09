@@ -10,7 +10,12 @@ export default function AddIdeaForm() {
 
     const onSubmit = (e) =>{
         e.preventDefault()
-        const formData =new formData(e.currentTarget)
+        const formData =new FormData(e.currentTarget)
+        const idea =Object.fromEntries(formData.entries())
+
+        console.log(idea
+
+        )
     }
         
 
@@ -44,6 +49,8 @@ export default function AddIdeaForm() {
 
   return (
     <div
+            onSubmit={onSubmit}
+    
       className="max-w-2xl mx-auto px-5 pt-8 pb-16 font-sans"
       style={{
         backgroundColor: '#F7F5F0',
