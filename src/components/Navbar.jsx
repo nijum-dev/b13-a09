@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
@@ -25,13 +26,30 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a className='text-[#FFFFFF]'>Home</a></li>
-            <li><a className='text-[#FFFFFFB3]'>Ideas</a></li>
-            <li><a className='text-[#FFFFFFB3]'>Add Idea<span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span></a></li>
-            <li className='text-[#FFFFFFB3] text-md font-semibold'><a>My Ideas<span  className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold' >Private</span></a></li>
-            <li className='text-[#FFFFFFB3]'><a>My Interactions<span  className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span></a></li>
-
-           
+            <li>
+              <Link href="/" className='text-[#FFFFFF]'>Home</Link>
+            </li>
+            <li>
+              <Link href="/ideas" className='text-[#FFFFFFB3]'>Ideas</Link>
+            </li>
+            <li>
+              <Link href="/AddIdeaForm" className='text-[#FFFFFFB3]'>
+                Add Idea
+                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
+              </Link>
+            </li>
+            <li className='text-[#FFFFFFB3] text-md font-semibold'>
+              <Link href="/my-ideas">
+                My Ideas
+                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
+              </Link>
+            </li>
+            <li className='text-[#FFFFFFB3]'>
+              <Link href="/my-interactions">
+                My Interactions
+                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end gap-1 bg-[#1A3C2E]">

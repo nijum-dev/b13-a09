@@ -5,7 +5,7 @@ const Hero = () => {
         <div>
 
             <div className='bg-[#1a3c2e] items-center text-center pt-20'>
-                <button  className='border text-[#E8A020] bg-[#E8A0202E] mb-5 rounded-2xl p-2 text-xs font-semibold '>✦ THE STARTUP IDEA ECOSYSTEM</button>
+                <button  className='border text-[#E8A020] bg-[#E8A0202E] mb-5 rounded-2xl p-2 text-xs font-semibold tracking-widest '>✦ THE STARTUP IDEA ECOSYSTEM</button>
                 <h1 className='text-white font-extrabold text-7xl'>Where Bold Ideas</h1>
                 <h1 className='text-white font-extrabold text-7xl'>Find</h1>
                 <h1 className='text-[#e8a020] font-extrabold text-7xl'>Their Community</h1>
