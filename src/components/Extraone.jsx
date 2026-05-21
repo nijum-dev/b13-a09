@@ -49,5 +49,5 @@ const ExtraOne = () => {
         </div>
     );
 };
-<h5>SIMPLE PROCESS</h5>
+
 export default ExtraOne;
