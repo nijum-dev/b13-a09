@@ -6,27 +6,24 @@ export default function AddIdeaForm() {
   const [tagInput, setTagInput] = useState('')
   const [toast, setToast] = useState(false)
 
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const idea = Object.fromEntries(formData.entries());
+    idea.tags = tags;
+    console.log(idea);
+    setToast(true);
+    setTimeout(() => setToast(false), 3000);
+  };
+
   const addTag = (val) => {
-
-    const onSubmit = (e) =>{
-        e.preventDefault()
-        const formData =new FormData(e.currentTarget)
-        const idea =Object.fromEntries(formData.entries())
-
-        console.log(idea
-
-        )
-    }
-        
-
-    const clean = val.replace(/,$/, '').trim()
-
+    const clean = val.replace(/,$/, '').trim();
     if (clean && !tags.includes(clean)) {
-      setTags([...tags, clean])
+      setTags([...tags, clean]);
     }
-
-    setTagInput('')
-  }
+    setTagInput('');
+  };
 
   const removeTag = (tag) => {
     setTags(tags.filter(t => t !== tag))
@@ -48,9 +45,8 @@ export default function AddIdeaForm() {
   }
 
   return (
-    <div
-            onSubmit={onSubmit}
-    
+    <form
+      onSubmit={onSubmit}
       className="max-w-2xl mx-auto px-5 pt-8 pb-16 font-sans"
       style={{
         backgroundColor: '#F7F5F0',
@@ -97,6 +93,7 @@ export default function AddIdeaForm() {
         </label>
 
         <input
+          name="title"
           type="text"
           placeholder="A catchy name for your idea"
           className="w-full rounded-lg px-3.5 py-2.5 text-sm mb-4 border transition focus:outline-none"
@@ -123,6 +120,7 @@ export default function AddIdeaForm() {
         </label>
 
         <input
+          name="shortDesc"
           type="text"
           placeholder="One-liner pitch (max 120 chars)"
           className="w-full rounded-lg px-3.5 py-2.5 text-sm mb-4 border transition focus:outline-none"
@@ -151,6 +149,7 @@ export default function AddIdeaForm() {
             </label>
 
             <select
+              name="category"
               className="w-full rounded-lg px-3.5 py-2.5 text-sm border transition appearance-none cursor-pointer focus:outline-none"
               style={{
                 backgroundColor: '#F7F5F0',
@@ -184,6 +183,7 @@ export default function AddIdeaForm() {
             </label>
 
             <input
+              name="imageUrl"
               type="text"
               placeholder="https://..."
               className="w-full rounded-lg px-3.5 py-2.5 text-sm border transition focus:outline-none"
@@ -220,20 +220,23 @@ export default function AddIdeaForm() {
           Detailed Description
         </h3>
 
-        {[
+        {[ 
           {
             label: 'Detailed Description *',
             placeholder: 'Describe your idea in detail...',
+            name: 'detailedDesc',
           },
           {
             label: 'Problem Statement *',
             placeholder: 'What problem does this solve?',
+            name: 'problem',
           },
           {
             label: 'Proposed Solution *',
             placeholder: 'How does your idea solve it?',
+            name: 'solution',
           },
-        ].map(({ label, placeholder }, i) => (
+        ].map(({ label, placeholder, name }, i) => (
           <div key={i} className={i < 2 ? 'mb-4' : ''}>
             <label
               className="block text-xs font-semibold mb-1.5"
@@ -243,6 +246,7 @@ export default function AddIdeaForm() {
             </label>
 
             <textarea
+              name={name}
               placeholder={placeholder}
               rows={i === 0 ? 4 : 3}
               className="w-full rounded-lg px-3.5 py-2.5 text-sm border transition resize-y focus:outline-none"
@@ -289,6 +293,7 @@ export default function AddIdeaForm() {
             </label>
 
             <input
+              name="audience"
               type="text"
               placeholder="e.g. Students, SMBs, Parents"
               className="w-full rounded-lg px-3.5 py-2.5 text-sm border transition focus:outline-none"
@@ -317,6 +322,7 @@ export default function AddIdeaForm() {
             </label>
 
             <input
+              name="budget"
               type="text"
               placeholder="e.g. $50,000 – $200,000"
               className="w-full rounded-lg px-3.5 py-2.5 text-sm border transition focus:outline-none"
@@ -402,7 +408,7 @@ export default function AddIdeaForm() {
 
       {/* Submit Button */}
       <button
-        onClick={submitIdea}
+        type="submit"
         className="w-full flex items-center justify-center gap-2 font-semibold text-sm rounded-xl py-3.5 transition-all duration-150 active:scale-[.98] text-white"
         style={{ backgroundColor: '#E8A020' }}
         onMouseEnter={(e) => {
@@ -428,6 +434,6 @@ export default function AddIdeaForm() {
           <span>Idea published successfully!</span>
         </div>
       )}
-    </div>
+    </form>
   )
 }
