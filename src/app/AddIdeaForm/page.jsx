@@ -7,6 +7,13 @@ export default function AddIdeaForm() {
   const [toast, setToast] = useState(false)
 
   const addTag = (val) => {
+
+    const onSubmit = (e) =>{
+        e.preventDefault()
+        const formData =new formData(e.currentTarget)
+    }
+        
+
     const clean = val.replace(/,$/, '').trim()
 
     if (clean && !tags.includes(clean)) {
