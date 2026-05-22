@@ -1,57 +1,48 @@
 import React from 'react';
 
 const ExtraTwo = () => {
-    return (
-        <div className='bg-[#F7F5F0] pb-10'>
+    const categories = [
+        { emoji: "🤖", name: "Artificial Intelligence", count: "348 ideas" },
+        { emoji: "💊", name: "Health & Wellness", count: "214 ideas" },
+        { emoji: "📚", name: "Education", count: "189 ideas" },
+        { emoji: "💰", name: "Fintech", count: "267 ideas" },
+        { emoji: "🌿", name: "Sustainability", count: "143 ideas" },
+        { emoji: "🏠", name: "PropTech", count: "98 ideas" },
+        { emoji: "🛒", name: "E-Commerce", count: "176 ideas" },
+        { emoji: "🎮", name: "Gaming & VR", count: "122 ideas" }
+    ];
 
-            <div className='px-8 py-8 pt-10 mx-auto  '>
-                <h5 className='text-[#E8A020] font-semibold text-xs tracking-widest       mb-2'>BROWSE BY CATEGORY</h5>
-                <h1 className='text-4xl font-extrabold text-[#1A3C2A]'>Explore Every Domain</h1>
+    return (
+        <div className="bg-[#F7F5F0] dark:bg-zinc-900 pb-16 transition-colors duration-300">
+            
+            {/* Header */}
+            <div className="px-8 py-8 pt-12 mx-auto">
+                <h5 className="text-[#E8A020] font-semibold text-xs tracking-widest mb-2 uppercase">
+                    BROWSE BY CATEGORY
+                </h5>
+                <h1 className="text-4xl font-extrabold text-[#1A3C2A] dark:text-[#E8A020]">
+                    Explore Every Domain
+                </h1>
             </div>
 
-            <div className=' grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 p-5 '>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>🤖</p>
-                    <p className='text-[#1A3C2A] font-bold'>Artificial Intelligence</p>
-                    <p className='text-gray-500'>348 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>💊</p>
-                    <p className='text-[#1A3C2A] font-bold'>Health & Wellness</p>
-                    <p className='text-gray-500'>214 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-8 py-8 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>📚</p>
-                    <p className='text-[#1A3C2A] font-bold'>Education</p>
-                    <p className='text-gray-500'>189 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>💰</p>
-                    <p className='text-[#1A3C2A] font-bold'>Fintech</p>
-                    <p className='text-gray-500'>267 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>🌿</p>
-                    <p className='text-[#1A3C2A] font-bold'>Sustainability</p>
-                    <p className='text-gray-500'>143 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>🏠</p>
-                    <p className='text-[#1A3C2A] font-bold'>PropTech</p>
-                    <p className='text-gray-500'>98 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>🛒</p>
-                    <p className='text-[#1A3C2A] font-bold'>E-Commerce</p>
-                    <p className='text-gray-500'>176 ideas</p>
-                </div>
-                <div className='bg-white items-center text-center container px-5 py-5 border rounded-2xl border-gray-400'>
-                    <p className='text-3xl'>🎮</p>
-                    <p className='text-[#1A3C2A] font-bold'>Gaming & VR</p>
-                    <p className='text-gray-500'>122 ideas</p>
-                </div>
-
-
+            {/* Grid */}
+            <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 p-5">
+                {categories.map((cat, i) => (
+                    <div 
+                        key={i}
+                        className="bg-white dark:bg-zinc-800 p-6 border border-[#1A3C2E1A] dark:border-zinc-700 rounded-3xl items-center text-center shadow-sm hover:shadow-md transition-all duration-300 group"
+                    >
+                        <p className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                            {cat.emoji}
+                        </p>
+                        <p className="text-[#1A3C2A] dark:text-white font-extrabold mb-1">
+                            {cat.name}
+                        </p>
+                        <p className="text-gray-500 dark:text-zinc-400 text-xs">
+                            {cat.count}
+                        </p>
+                    </div>
+                ))}
             </div>
 
         </div>

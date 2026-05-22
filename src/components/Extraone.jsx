@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExtraOne = () => {
     return (
-        <div className="bg-[#1A3C2A] px-4 sm:px-8 py-10">
+        <div className="bg-[#1A3C2A] dark:bg-zinc-950 px-4 sm:px-8 py-10 transition-colors duration-300">
             <div className="text-center items-center pt-10 pb-10">
                 <h5 className="text-[#E8A020] font-semibold text-xs sm:text-sm tracking-widest">SIMPLE PROCESS</h5>
                 <h1 className="text-white font-bold text-3xl sm:text-4xl md:text-5xl mt-2">How IdeaVault Works</h1>
