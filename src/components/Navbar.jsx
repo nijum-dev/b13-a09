@@ -4,57 +4,120 @@ import React from 'react';
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-[#1A3C2E] shadow-sm">
+      <div className="navbar bg-[#1A3C2E] shadow-sm px-4">
+
+        {/* Navbar Start */}
         <div className="navbar-start">
+
+          {/* Mobile Menu */}
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
             </div>
+
             <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#1A3C2E] rounded-box w-52"
+            >
               <li>
-                <a>Parent</a>
-                
+                <Link href="/" className="text-white">
+                  Home
+                </Link>
               </li>
-              <li><a>Item 3</a></li>
+
+              <li>
+                <Link href="/ideas" className="text-white">
+                  Ideas
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/idea-form" className="text-white">
+                  Add Idea
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/my-ideas" className="text-white">
+                  My Ideas
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/my-interactions" className="text-white">
+                  My Interactions
+                </Link>
+              </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl font-bold text-[#FFFFFF]">🔐
-            Idea<span className='text-[#E8A020]'>Vault</span></a>
+
+          {/* Logo */}
+          <a className="btn btn-ghost text-xl font-bold text-white hidden lg:block">
+            🔐 Idea<span className="text-[#E8A020]">Vault</span>
+          </a>
         </div>
+
+        {/* Desktop Menu */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
+
             <li>
-              <Link href="/" className='text-[#FFFFFF]'>Home</Link>
+              <Link href="/" className="text-white">
+                Home
+              </Link>
             </li>
+
             <li>
-              <Link href="/ideas" className='text-[#FFFFFFB3]'>Ideas</Link>
+              <Link href="/ideas" className="text-[#FFFFFFB3]">
+                Ideas
+              </Link>
             </li>
+
             <li>
-              <Link href="/AddIdeaForm" className='text-[#FFFFFFB3]'>
+              <Link href="/idea-form" className="text-[#FFFFFFB3]">
                 Add Idea
-                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
               </Link>
             </li>
-            <li className='text-[#FFFFFFB3] text-md font-semibold'>
-              <Link href="/my-ideas">
+
+            <li>
+              <Link href="/my-ideas" className="text-[#FFFFFFB3]">
                 My Ideas
-                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
               </Link>
             </li>
-            <li className='text-[#FFFFFFB3]'>
-              <Link href="/my-interactions">
+
+            <li>
+              <Link href="/my-interactions" className="text-[#FFFFFFB3]">
                 My Interactions
-                <span className='text-xs text-[#E8A020] bg-[#E8A0202E] rounded-2xl p-1 font-semibold'>Private</span>
               </Link>
             </li>
+
           </ul>
         </div>
-        <div className="navbar-end gap-1 bg-[#1A3C2E]">
-          <a className="btn bg-[#1A3C2A] border border-white text-white hover:border-[#E8A020] hover:text-[#E8A020]">Sign In</a>
-          <a className="btn  bg-[#1A3C2A] border border-white text-white hover:border-[#E8A020] hover:text-[#E8A020]">Register</a>
+
+        {/* Navbar End */}
+        <div className="navbar-end gap-2">
+
+          <a className="btn bg-[#1A3C2E] border border-white text-white hover:border-[#E8A020] hover:text-[#E8A020]">
+            Sign In
+          </a>
+
+          <a className="btn bg-[#1A3C2E] border border-white text-white hover:border-[#E8A020] hover:text-[#E8A020]">
+            Register
+          </a>
+
         </div>
       </div>
     </div>

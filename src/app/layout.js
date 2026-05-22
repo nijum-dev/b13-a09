@@ -6,6 +6,7 @@ import Cards from "@/components/Cards";
 import Footer from "@/components/Footer";
 import ExtraOne from "@/components/ExtraOne";
 import ExtraTwo from "@/components/ExtraTwo";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar></Navbar>
-        <Hero></Hero>
-        <Cards></Cards>
-        <ExtraOne></ExtraOne>
-        <ExtraTwo></ExtraTwo>
+       
         {children}
+         <ToastContainer />
         <Footer></Footer>
         
         </body>
